@@ -484,6 +484,16 @@ body {
     text-align: center;
 }
 
+/* Override snap-section padding to align arrow with other sections */
+.hero.snap-section {
+    padding-bottom: 0;
+}
+
+/* Move hero arrow up to align with mission/ecosystem arrows */
+.hero .scroll-arrow {
+    bottom: 120px;
+}
+
 .hero-orb {
     position: relative;
     width: 120px;
@@ -1210,36 +1220,87 @@ footer {
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
     .content-stage {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 
+    /* --- Fix 1 & 2: Reduce spacing across all snap sections --- */
     .snap-section {
-        padding: 30px 20px 60px;
+        padding: 20px 16px 40px;
+    }
+
+    .hero.snap-section {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    /* Move hero arrow up on mobile too */
+    .hero .scroll-arrow {
+        bottom: 60px;
     }
 
     .wordmark {
         font-size: 3rem;
-        letter-spacing: 0.3em;
+        letter-spacing: 0.08em;
     }
 
     .tagline {
         font-size: 1.2rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.05em;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* --- Fix 3: Ecosystem cards — vertical stack instead of horizontal scroll --- */
+    .ecosystem-section.snap-section {
+        height: auto;
+        min-height: auto;
+        max-height: none;
     }
 
     .ecosystem-grid-two {
         display: flex;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x proximity;
-        gap: 20px;
-        padding-bottom: 10px;
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        gap: 24px;
+        padding-bottom: 0;
     }
 
     .ecosystem-grid-two .app-card {
-        min-width: 300px;
-        flex: 0 0 auto;
-        scroll-snap-align: start;
+        min-width: unset;
+        width: 100%;
+        flex: none;
+        scroll-snap-align: none;
+    }
+
+    /* Always show card details on mobile (no hover) */
+    .app-card-details {
+        max-height: 150px;
+        opacity: 1;
+        margin-top: 16px;
+    }
+
+    .app-card {
+        padding: 30px 24px;
+    }
+
+    .app-card-orb {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 20px;
+    }
+
+    .app-card-name {
+        font-size: 1.6rem;
+    }
+
+    /* Active state for touch (replaces hover) */
+    .app-card:active {
+        transform: translateY(-4px) scale(1.01);
+        border-color: rgba(255, 255, 255, 0.2);
     }
 
     .app-header {
@@ -1250,7 +1311,7 @@ footer {
 
     .app-name {
         font-size: 2.5rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
     }
 
     .features-grid {
@@ -1262,8 +1323,8 @@ footer {
     }
 
     .page {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .download-buttons {
@@ -1276,13 +1337,41 @@ footer {
         text-align: center;
     }
 
+    /* --- Fix 4: Coming Soon orbs — circular, properly sized --- */
+    .planned-apps {
+        margin-top: 40px;
+    }
+
     .planned-grid-unnamed {
-        gap: 20px;
+        gap: 16px;
+        flex-wrap: wrap;
     }
 
     .orb-only {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
+        aspect-ratio: 1;
+    }
+
+    /* Touch feedback for orbs */
+    .orb-only:active {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    .orb-only:active .orb-glow {
+        opacity: 0.9;
+        filter: blur(20px);
+        transform: scale(1.2);
+    }
+
+    /* Scroll arrow sizing for mobile */
+    .scroll-arrow span {
+        font-size: 1.5rem;
+    }
+
+    .snap-footer {
+        padding: 20px 16px;
     }
 }
 
