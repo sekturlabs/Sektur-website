@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g transform="rotate(45, 50, 50)">
+    <path d="M50 15C50 15 35 35 35 50C35 60 40 70 50 75C60 70 65 60 65 50C65 35 50 15 50 15Z"
+      fill="none" stroke="#00F0FF" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="50" cy="40" r="5" fill="none" stroke="#00F0FF" stroke-width="3"/>
+    <circle cx="50" cy="40" r="2.5" fill="#00F0FF"/>
+    <path d="M35 55L25 70L35 65Z" fill="#00F0FF" fill-opacity="0.15" stroke="#00F0FF" stroke-width="3"/>
+    <path d="M65 55L75 70L65 65Z" fill="#00F0FF" fill-opacity="0.15" stroke="#00F0FF" stroke-width="3"/>
+  </g>
+</svg>

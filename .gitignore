@@ -1,0 +1,9 @@
+# Internal tools
+font-compare.html
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
