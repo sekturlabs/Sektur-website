@@ -1,6 +1,11 @@
 # Internal tools
 font-compare.html
 
+# Dev docs (keep local, not public)
+TODO.md
+DEV_NOTES.md
+PROJECT_CONTEXT.md
+
 # macOS
 .DS_Store
 
