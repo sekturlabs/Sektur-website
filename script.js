@@ -78,6 +78,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Orb tap-to-glow interaction (Coming Soon orbs)
+    document.querySelectorAll('.orb-only').forEach(orb => {
+        orb.addEventListener('click', function () {
+            const wasActive = this.classList.contains('orb-tapped');
+            // Reset all orbs
+            document.querySelectorAll('.orb-only').forEach(o => o.classList.remove('orb-tapped'));
+            // Toggle tapped state (if it wasn't active, activate it)
+            if (!wasActive) {
+                this.classList.add('orb-tapped');
+            }
+        });
+    });
+
     // Console easter egg
     console.log(`
     ███████╗███████╗██╗  ██╗████████╗██╗   ██╗██████╗ 
