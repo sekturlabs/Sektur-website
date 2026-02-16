@@ -1,0 +1,65 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(45, 50, 50)">
+    <!-- Subtle shadow for depth (solid, not blurred) -->
+    <path d="M50 15C50 15 35 35 35 50C35 60 40 70 50 75C60 70 65 60 65 50C65 35 50 15 50 15Z"
+      fill="none" stroke="#666666" stroke-width="2.5" stroke-linejoin="round" opacity="0.3" 
+      transform="translate(1, 1)"/>
+    
+    <!-- Main rocket body - crisp white -->
+    <path d="M50 15C50 15 35 35 35 50C35 60 40 70 50 75C60 70 65 60 65 50C65 35 50 15 50 15Z"
+      fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+    
+    <!-- Sharp highlight on top-left edge -->
+    <path d="M50 15C50 15 42 25 38 38" 
+      fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    
+    <!-- Window outer ring -->
+    <circle cx="50" cy="40" r="5" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+    
+    <!-- Window inner glow ring (sharp) -->
+    <circle cx="50" cy="40" r="3.5" fill="none" stroke="#FFFFFF" stroke-width="0.5" opacity="0.5"/>
+    
+    <!-- Window center dot -->
+    <circle cx="50" cy="40" r="2.5" fill="#FFFFFF"/>
+    
+    <!-- Left fin - shadow -->
+    <path d="M35 55L25 70L35 65Z" fill="none" stroke="#666666" stroke-width="2.5" opacity="0.3"
+      transform="translate(0.8, 0.8)"/>
+    <!-- Left fin - main -->
+    <path d="M35 55L25 70L35 65Z" fill="#FFFFFF" fill-opacity="0.2" 
+      stroke="#FFFFFF" stroke-width="3"/>
+    <!-- Left fin - highlight edge -->
+    <path d="M35 55L25 70" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Right fin - shadow -->
+    <path d="M65 55L75 70L65 65Z" fill="none" stroke="#666666" stroke-width="2.5" opacity="0.3"
+      transform="translate(0.8, 0.8)"/>
+    <!-- Right fin - main -->
+    <path d="M65 55L75 70L65 65Z" fill="#FFFFFF" fill-opacity="0.2" 
+      stroke="#FFFFFF" stroke-width="3"/>
+    <!-- Right fin - highlight edge -->
+    <path d="M65 55L75 70" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
+    
+    <!-- Exhaust particles (left trail) - sharper, brighter -->
+    <circle cx="42" cy="78" r="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="42" cy="78" r="1.5" fill="#FFFFFF" opacity="0.3"/>
+    
+    <circle cx="45" cy="82" r="2" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="45" cy="82" r="1" fill="#FFFFFF" opacity="0.2"/>
+    
+    <circle cx="48" cy="85" r="1.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+    
+    <circle cx="51" cy="88" r="1" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.25"/>
+    
+    <!-- Exhaust particles (right trail) - sharper, brighter -->
+    <circle cx="58" cy="78" r="2.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="58" cy="78" r="1.5" fill="#FFFFFF" opacity="0.3"/>
+    
+    <circle cx="55" cy="82" r="2" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="55" cy="82" r="1" fill="#FFFFFF" opacity="0.2"/>
+    
+    <circle cx="52" cy="85" r="1.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+    
+    <circle cx="49" cy="88" r="1" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.25"/>
+  </g>
+</svg>

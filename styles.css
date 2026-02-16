@@ -1,5 +1,14 @@
 /* SEKTUR COMMAND CENTER - CYBERPUNK MINIMALIST */
 
+/* Self-hosted Exo 2 variable font */
+@font-face {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url('fonts/exo2.woff2') format('woff2');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -502,6 +511,12 @@ body {
     animation: float 6s ease-in-out infinite;
 }
 
+/* Larger orb image for hero section */
+.orb-image-hero {
+    width: 315% !important;
+    height: 315% !important;
+}
+
 .hero-orb .orb-glow {
     width: 100%;
     height: 100%;
@@ -530,6 +545,8 @@ body {
     letter-spacing: 0.05em;
     margin: 0 0 20px 0;
     line-height: 1.1;
+    position: relative;
+    z-index: 5;
 }
 
 .tagline {
@@ -539,6 +556,8 @@ body {
     color: var(--text-secondary);
     margin-bottom: 20px;
     line-height: 1.4;
+    position: relative;
+    z-index: 5;
 }
 
 .system-status {
@@ -548,6 +567,8 @@ body {
     color: var(--text-muted);
     letter-spacing: 0.05em;
     opacity: 0.7;
+    position: relative;
+    z-index: 5;
 }
 
 .mission {
@@ -751,6 +772,7 @@ body {
     position: relative;
     opacity: 0;
     transform: translateY(20px) scale(0.95);
+    overflow: hidden;
 }
 
 .app-card.visible {
@@ -781,6 +803,29 @@ body {
     height: 120px;
     position: relative;
     margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Photorealistic rendered orb image */
+.orb-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 324%;
+    height: 324%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+    mix-blend-mode: lighten;
+}
+
+/* Quota orb scaled to visually match Stasis (teal sphere 702px vs cyan 514px in 2048px frames) */
+.orb-image-quota {
+    width: 237%;
+    height: 237%;
 }
 
 .app-card-content {
@@ -920,6 +965,117 @@ body {
     transform: scale(1.2);
 }
 
+/* Coming Soon orb images */
+.coming-soon-orb {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 15px;
+    transition: scale 0.3s ease, box-shadow 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.coming-soon-orb:hover {
+    scale: 1.15;
+}
+
+/* Floating animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.coming-soon-orb img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: lighten;
+    pointer-events: none;
+}
+
+/* Individual orb scaling based on sphere-to-frame ratios */
+.orb-image-amber {
+    width: 398%;
+    height: 398%;
+}
+
+.orb-image-red {
+    width: 350%;
+    height: 350%;
+}
+
+.orb-image-green {
+    width: 296%;
+    height: 296%;
+}
+
+.orb-image-purple {
+    width: 351%;
+    height: 351%;
+}
+
+.orb-image-white {
+    width: 260%;
+    height: 260%;
+}
+
+/* Animation delays for staggered floating */
+.orb-float-1 {
+    animation-delay: 0s;
+}
+
+.orb-float-2 {
+    animation-delay: 1.2s;
+}
+
+.orb-float-3 {
+    animation-delay: 2.4s;
+}
+
+.orb-float-4 {
+    animation-delay: 3.6s;
+}
+
+.orb-float-5 {
+    animation-delay: 4.8s;
+}
+
+
+/* Hover glows for each orb color */
+.orb-only:hover .coming-soon-orb:has(.orb-image-amber) {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.3);
+}
+
+.orb-only:hover .coming-soon-orb:has(.orb-image-red) {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6), 0 0 40px rgba(220, 38, 38, 0.3);
+}
+
+.orb-only:hover .coming-soon-orb:has(.orb-image-green) {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.6), 0 0 40px rgba(34, 197, 94, 0.3);
+}
+
+.orb-only:hover .coming-soon-orb:has(.orb-image-purple) {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.orb-only:hover .coming-soon-orb:has(.orb-image-white) {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
 .app-card-planned {
     padding: 30px 20px;
     opacity: 0.6;
@@ -1023,6 +1179,39 @@ body {
     letter-spacing: 0.04em;
     margin-bottom: 10px;
     line-height: 1.2;
+}
+
+/* Inline orb next to app name headings */
+.app-name-orb {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+.app-name-orb img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* Quota orb: sphere is 34.3% of frame, scale = 1/0.343 ≈ 2.9x */
+.app-name-orb-quota img {
+    width: 290%;
+    height: 290%;
+}
+
+/* Stasis orb: sphere is 25.1% of frame, scale = 1/0.251 ≈ 4x */
+.app-name-orb-stasis img {
+    width: 400%;
+    height: 400%;
 }
 
 .app-tagline {
