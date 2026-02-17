@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sektur</title>
+    <meta name="description"
+        content="Get in touch with Sektur. Send us your feedback, questions, or partnership inquiries.">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io;">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contact page specific styles */
+        .contact-container {
+            min-height: 100vh;
+            padding: 100px 60px 60px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.15em;
+            color: var(--text-primary);
+        }
+
+        .contact-header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ---- Form ---- */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        .form-group label .required {
+            color: rgba(100, 140, 255, 0.7);
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 14px 18px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: rgba(100, 140, 255, 0.4);
+            box-shadow: 0 0 20px rgba(100, 140, 255, 0.08), inset 0 0 20px rgba(100, 140, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-group select option {
+            background: #0a0a0a;
+            color: var(--text-primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 160px;
+            line-height: 1.6;
+        }
+
+        /* ---- Row layout for name + email ---- */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ---- Submit button ---- */
+        .submit-btn {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, rgba(100, 140, 255, 0.15), rgba(100, 140, 255, 0.05));
+            border: 1px solid rgba(100, 140, 255, 0.25);
+            border-radius: 10px;
+            padding: 16px 32px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(100, 140, 255, 0.2), rgba(100, 140, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            border-color: rgba(100, 140, 255, 0.5);
+            box-shadow: 0 0 30px rgba(100, 140, 255, 0.15), 0 0 60px rgba(100, 140, 255, 0.05);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn:hover::before {
+            opacity: 1;
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ---- Success / Error states ---- */
+        .form-status {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .form-status.success {
+            background: rgba(80, 200, 120, 0.08);
+            border: 1px solid rgba(80, 200, 120, 0.2);
+            color: rgba(80, 200, 120, 0.9);
+        }
+
+        .form-status.error {
+            background: rgba(255, 80, 80, 0.08);
+            border: 1px solid rgba(255, 80, 80, 0.2);
+            color: rgba(255, 80, 80, 0.9);
+        }
+
+        .form-status h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .form-status p {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---- Footer ---- */
+        .contact-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .contact-footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 90px 24px 40px;
+            }
+
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- COMPACT TOP NAVIGATION -->
+    <nav class="top-nav" role="navigation" aria-label="Main Navigation">
+        <div class="nav-brand">
+            <a href="index.html" class="nav-brand-link">
+                <svg class="nav-rocket" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="rotate(45, 50, 50)">
+                        <path d="M50 15C50 15 35 35 35 50C35 60 40 70 50 75C60 70 65 60 65 50C65 35 50 15 50 15Z"
+                            fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" />
+                        <circle cx="50" cy="40" r="5" fill="none" stroke="#FFFFFF" stroke-width="2.5" />
+                        <circle cx="50" cy="40" r="2.5" fill="#FFFFFF" />
+                        <path d="M35 55L25 70L35 65Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF"
+                            stroke-width="2.5" />
+                        <path d="M65 55L75 70L65 65Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF"
+                            stroke-width="2.5" />
+                    </g>
+                </svg>
+                <span class="nav-wordmark">Sektur</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p class="subtitle">Have a question, feedback, or want to work together? We'd love to hear from you.</p>
+        </div>
+
+        <!-- Form -->
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/meelkrjv" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="App Feedback">App Feedback</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Bug Report">Bug Report</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span>Send Message</span>
+            </button>
+        </form>
+
+        <!-- Status messages (hidden by default, shown via JS) -->
+        <div id="form-success" class="form-status">
+            <h3>Message Sent ✓</h3>
+            <p>Thanks for reaching out. We'll get back to you soon.</p>
+        </div>
+
+        <div id="form-error" class="form-status">
+            <h3>Something went wrong</h3>
+            <p>Please try again, or email us directly at <a href="mailto:hello@sektur.com"
+                    style="color: inherit; text-decoration: underline;">hello@sektur.com</a></p>
+        </div>
+
+        <div class="contact-footer">
+            <p><a href="index.html">← Back to Sektur</a></p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">© 2026 Sektur. All rights
+                reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const successMsg = document.getElementById('form-success');
+        const errorMsg = document.getElementById('form-error');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.querySelector('span').textContent = 'Sending...';
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMsg.classList.add('success');
+                    successMsg.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                errorMsg.classList.add('error');
+                errorMsg.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.querySelector('span').textContent = 'Send Message';
+            }
+        });
+    </script>
+</body>
+
+</html>
