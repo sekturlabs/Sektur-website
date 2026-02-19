@@ -70,14 +70,14 @@ body {
 .nav-brand-link {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 4px;
     text-decoration: none;
     color: inherit;
 }
 
 .nav-rocket {
-    width: 54px;
-    height: 54px;
+    width: 65px;
+    height: 65px;
     opacity: 0.9;
     transition: all 0.3s ease;
 }
