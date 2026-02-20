@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sektur.com/sitemap.xml

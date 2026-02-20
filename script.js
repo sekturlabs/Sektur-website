@@ -66,14 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const nextSection = currentSection.nextElementSibling;
             if (nextSection && nextSection.classList.contains('snap-section')) {
                 nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                // If there's no next snap-section, try scrolling to the next sibling
-                const container = currentSection.parentElement;
-                const allSections = container.querySelectorAll('.snap-section');
-                const currentIndex = Array.from(allSections).indexOf(currentSection);
-                if (currentIndex < allSections.length - 1) {
-                    allSections[currentIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
             }
         });
     });

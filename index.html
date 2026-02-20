@@ -8,7 +8,10 @@
         content="Sektur — A unified ecosystem of applications for mastering time, energy, and focus. Balance the Chaos.">
     <meta name="theme-color" content="#050505">
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+        content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <link rel="canonical" href="https://sektur.com/">
     <meta property="og:title" content="Sektur — Balance the Chaos">
     <meta property="og:description"
         content="A unified ecosystem of applications designed to help you master time, energy, and focus.">
@@ -46,7 +49,7 @@
                 <div class="snap-section-content">
                     <div class="hero-orb">
                         <div class="orb-glow orb-glow-white pulse"></div>
-                        <img src="orb-white.jpeg" alt="Sektur orb" class="orb-image orb-image-hero">
+                        <img src="orb-white.webp" alt="Sektur orb" class="orb-image orb-image-hero">
                     </div>
                     <h1 class="wordmark">Sektur</h1>
                     <p class="tagline">Balance the Chaos</p>
@@ -73,7 +76,7 @@
                     <div class="app-card app-card-active" data-status="stable" data-stagger="0">
                         <div class="app-card-orb">
                             <div class="orb-glow orb-glow-teal"></div>
-                            <img src="orb-teal.jpeg" alt="Quota orb" class="orb-image orb-image-quota">
+                            <img src="orb-teal.webp" alt="Quota orb" class="orb-image orb-image-quota" loading="lazy">
                         </div>
                         <div class="app-card-content">
                             <span class="status-badge status-stable">Available Now</span>
@@ -95,7 +98,7 @@
                     <div class="app-card app-card-active" data-status="dev" data-stagger="1">
                         <div class="app-card-orb">
                             <div class="orb-glow orb-glow-cyan"></div>
-                            <img src="orb-cyan.jpeg" alt="Stasis orb" class="orb-image">
+                            <img src="orb-cyan.webp" alt="Stasis orb" class="orb-image" loading="lazy">
                         </div>
                         <div class="app-card-content">
                             <span class="status-badge status-dev">In Development</span>
@@ -120,31 +123,31 @@
                             <!-- E - Entropy (Amber) -->
                             <div class="orb-only" data-orb="entropy">
                                 <div class="coming-soon-orb orb-float-1">
-                                    <img src="orb-amber.jpeg" alt="" class="orb-image orb-image-amber">
+                                    <img src="orb-amber.webp" alt="" class="orb-image orb-image-amber" loading="lazy">
                                 </div>
                             </div>
                             <!-- K - Kinetic (Red) -->
                             <div class="orb-only" data-orb="kinetic">
                                 <div class="coming-soon-orb orb-float-2">
-                                    <img src="orb-red.jpeg" alt="" class="orb-image orb-image-red">
+                                    <img src="orb-red.webp" alt="" class="orb-image orb-image-red" loading="lazy">
                                 </div>
                             </div>
                             <!-- T - Trace (Terminal Green) -->
                             <div class="orb-only" data-orb="trace">
                                 <div class="coming-soon-orb orb-float-3">
-                                    <img src="orb-green.png" alt="" class="orb-image orb-image-green">
+                                    <img src="orb-green.webp" alt="" class="orb-image orb-image-green" loading="lazy">
                                 </div>
                             </div>
                             <!-- U - Umbra (Purple) -->
                             <div class="orb-only" data-orb="umbra">
                                 <div class="coming-soon-orb orb-float-4">
-                                    <img src="orb-purple.jpeg" alt="" class="orb-image orb-image-purple">
+                                    <img src="orb-purple.webp" alt="" class="orb-image orb-image-purple" loading="lazy">
                                 </div>
                             </div>
                             <!-- R - Radiant (White) -->
                             <div class="orb-only" data-orb="radiant">
                                 <div class="coming-soon-orb orb-float-5">
-                                    <img src="orb-white.jpeg" alt="" class="orb-image orb-image-white">
+                                    <img src="orb-white.webp" alt="" class="orb-image orb-image-white" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -201,8 +204,8 @@
         <!-- QUOTA PAGE -->
         <section id="quota" class="page">
             <div class="app-header app-header-stacked">
-                <h1 class="app-name">Quota <span class="app-name-orb app-name-orb-quota"><img src="orb-teal.jpeg"
-                            alt=""></span></h1>
+                <h1 class="app-name">Quota <span class="app-name-orb app-name-orb-quota"><img src="orb-teal.webp" alt=""
+                            loading="lazy"></span></h1>
                 <p class="app-subtitle">Earn your screen time</p>
                 <span class="status-badge status-stable">Available Now</span>
                 <p class="app-body">Quota transforms your daily habits into a system of intentional balance. Track,
@@ -283,8 +286,8 @@
         <!-- STASIS PAGE -->
         <section id="stasis" class="page">
             <div class="app-header app-header-stacked">
-                <h1 class="app-name">Stasis <span class="app-name-orb app-name-orb-stasis"><img src="orb-cyan.jpeg"
-                            alt=""></span></h1>
+                <h1 class="app-name">Stasis <span class="app-name-orb app-name-orb-stasis"><img src="orb-cyan.webp"
+                            alt="" loading="lazy"></span></h1>
                 <p class="app-subtitle">Find stillness in motion</p>
                 <span class="status-badge status-dev">In Development</span>
                 <p class="app-body">A focused meditation and mindfulness companion designed to quiet the noise and

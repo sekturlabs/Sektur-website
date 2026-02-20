@@ -6,140 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Sektur</title>
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta name="description"
+    content="Privacy Policy for Sektur and Quota. Learn how we collect, use, and protect your personal data.">
+  <link rel="canonical" href="https://sektur.com/privacy.html">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Privacy page specific styles */
-    .privacy-container {
-      min-height: 100vh;
-      padding: 80px 60px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .privacy-header {
-      text-align: center;
-      margin-bottom: 60px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .privacy-header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      letter-spacing: 0.2em;
-      color: var(--text-primary);
-    }
-
-    .privacy-header .subtitle {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .privacy-content h2 {
-      color: var(--text-primary);
-      font-size: 2rem;
-      margin-top: 60px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .privacy-content h3 {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 1.5rem;
-      margin-top: 40px;
-      margin-bottom: 15px;
-    }
-
-    .privacy-content h4 {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 1.2rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-    }
-
-    .privacy-content p {
-      line-height: 1.8;
-      margin: 15px 0;
-      color: var(--text-secondary);
-    }
-
-    .privacy-content ul {
-      margin: 15px 0;
-      padding-left: 30px;
-    }
-
-    .privacy-content li {
-      line-height: 1.8;
-      margin: 10px 0;
-      color: var(--text-secondary);
-    }
-
-    .privacy-content li ul {
-      margin: 5px 0;
-    }
-
-    .privacy-content li ul li {
-      margin: 5px 0;
-    }
-
-    .privacy-content a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .privacy-content a:hover {
-      color: var(--text-primary);
-      border-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .privacy-footer {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-    }
-
-    .privacy-footer a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    .privacy-footer a:hover {
-      color: var(--text-primary);
-    }
-
-    .last-updated {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .privacy-container {
-        padding: 80px 24px;
-      }
-
-      .privacy-header h1 {
-        font-size: 2rem;
-      }
-
-      .privacy-content h2 {
-        font-size: 1.5rem;
-      }
-
-      .privacy-content h3 {
-        font-size: 1.25rem;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -793,7 +668,7 @@
 
     <div class="privacy-footer">
       <p><a href="index.html">← Back to Sektur</a></p>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">© 2026 Sektur. All rights reserved.</p>
+      <p class="copyright">© 2026 Sektur. All rights reserved.</p>
     </div>
   </div>
 </body>
