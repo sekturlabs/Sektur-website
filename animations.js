@@ -118,12 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
 
-            // If it's an app-card CTA link, let the hash change handle it
-            if (this.classList.contains('app-card-cta')) {
-                // Don't prevent default — let the hash change trigger navigateToPage
-                return;
-            }
-
             e.preventDefault();
             const targetElement = document.querySelector(targetId);
 
